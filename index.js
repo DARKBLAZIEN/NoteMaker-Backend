@@ -14,8 +14,13 @@ app.get('/',function(req,res){
     })
     
 })
+app.get('/files/:filename',function(req,res){
+    fs.readFile(`./files/${req.params.filename}`,'utf-8',function(err,content){
+        res.render("show",{filecontent:content,fname:req.params.filename});
+    })
+})
 app.post('/create',(req,res)=>{
-    fs.writeFile(`./files/${req.body.title.split(' ').join('')}`,req.body.details,function(err){
+    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`,req.body.details,function(err){
         res.redirect('/')
     })
 })

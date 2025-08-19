@@ -1,0 +1,1 @@
+I learned to create routes, dynamic routes, node and npm basics, different libraries, functions, middlewares, expressJS framework
