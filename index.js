@@ -24,4 +24,12 @@ app.post('/create',(req,res)=>{
         res.redirect('/')
     })
 })
+app.get('/editpage/:filename',(req,res)=>{
+    res.render('editpage',{filename : req.params.filename})
+})
+app.post('/editor',(req,res)=>{
+    fs.rename(`./files/${req.body.oldname}`,`./files/${req.body.newname.split(' ').join('')}.txt`,(err)=>{
+        res.redirect('/')
+    })
+})
 app.listen(3000);

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Edit page</title>
+</head>
+<body>
+    
+    <div class="bg-zinc-900 w-full min-h-screen main p-5">
+        <a href="/" class="text-blue-600">🡨 Go Back</a>
+        <h1 class=" heading pl-6 pt-5">Edit Filename</h1>
+        <div class="form-surround">
+            <form action="/editor" method="post">
+                <input name="oldname" type="text" class=" block rounded-md w-1/4 title bg-zinc-800 font-montserrat p-3 text-white" value="<%= filename %>">
+                <textarea name="newname" type="text" class="block w-1/4 resize-none mt-2 rounded-md bg-zinc-800 p-3 text-white" placeholder="New Filename"></textarea>
+                <input  type="submit" class="submit-button rounded-md p-3 mt-5" value="Update">
+            </form>
+        </div>
+    </div>
+    <script src="/javascripts/script.js" ></script>
+</body>
+</html>
